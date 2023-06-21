@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>AppCardsContainer</h3>
+        <!-- <h3>AppCardsContainer</h3> -->
     </div>
 </template>
 

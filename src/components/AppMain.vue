@@ -1,6 +1,6 @@
 <template>
     <main>
-        <h2>AppMain</h2>
+        <!-- <h2>AppMain</h2> -->
         <AppHeader />
         <AppCardsContainer />
     </main>

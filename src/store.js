@@ -5,10 +5,8 @@ const store = reactive({
     loading: true,
 
     moviesList: [],
-    movieTtitle: "",
-    originalMovieTitle: "",
-    movieLanguage: "",
-    movieReview: "",
+    tvSeriesList: [],
+    imgBaseUrl: ' https://image.tmdb.org/t/p/ ',
 
     languages: {
         'al': {
@@ -138,12 +136,12 @@ const store = reactive({
             languageCode: 'pt',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/pt.svg',
         },
-        // 'ru': {
-        //     language: 'Russian',
-        //     languageCode: 'ru',
-        //     flagImg: 'https://flagicons.lipis.dev/flags/4x3/ru.svg',
-        // },
-        'kr': {
+        'ru': {
+            language: 'Russian',
+            languageCode: 'ru',
+            flagImg: 'https://flagicons.lipis.dev/flags/4x3/ru.svg',
+        },
+        'ko': {
             language: 'Korean',
             languageCode: 'kr',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/kr.svg',

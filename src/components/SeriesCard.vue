@@ -1,18 +1,5 @@
 <template>
-    <div class="mt-3">
-        <!-- <MovieCard /> -->
-        <img src="" alt="">
-        <h1>Movies</h1>
-        <ol v-for="movie in store.moviesList" class="mb-3">
-            <li>{{ movie.title }}</li>
-            <li>{{ movie.original_title }}</li>
-            <img :src="addLanguageFlag(movie)" alt="">
-            <li v-if="!store.languages.hasOwnProperty(movie.original_language)">{{
-                movie.original_language }}</li>
-            <li>{{ movie.vote_average }}</li>
-        </ol>
-        <h1>Series</h1>
-        <img src="" alt="">
+    <div class="series-card">
         <ol v-for="series in store.tvSeriesList" class="mb-3">
             <li>{{ series.name }}</li>
             <li>{{ series.original_name }}</li>
@@ -31,7 +18,6 @@ export default {
     data() {
         return {
             store,
-            movieImgUrl: '',
         }
     },
     methods: {
@@ -46,12 +32,8 @@ export default {
                 let languageFlag = store.languages[element.original_language].flagImg;
                 return languageFlag;
             }
-        },
-        addMovieImg(element) {
-
         }
-    }
-},
+    },
 }		
 </script>
 <style scoped lang="scss">

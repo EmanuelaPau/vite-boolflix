@@ -22,12 +22,13 @@ export default {
         return {
             store,
             apiKey: 'f962c0c469c36980eda0b0c8310fb32d',
-            linkApi: ' https://api.themoviedb.org/3/search/movie',
+            linkApiMovie: ' https://api.themoviedb.org/3/search/movie',
+            // linkApiTv: ' https://api.themoviedb.org/3/search/tv',
         }
     },
     methods: {
         searchMovie(element) {
-            axios.get(this.linkApi, {
+            axios.get(this.linkApiMovie, {
                 params: {
                     api_key: 'f962c0c469c36980eda0b0c8310fb32d',
                     query: element,
@@ -52,7 +53,7 @@ export default {
     },
 
     created() {
-        axios.get(this.linkApi, {
+        axios.get(this.linkApiMovie, {
             params: {
                 api_key: 'f962c0c469c36980eda0b0c8310fb32d',
                 query: 'matrix'

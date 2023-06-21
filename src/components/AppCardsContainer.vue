@@ -4,8 +4,8 @@
         <ol v-for="movie in store.moviesList" class="mb-3">
             <li>{{ movie.title }}</li>
             <li>{{ movie.original_title }}</li>
-            <li>{{ addLanguageFlag(movie) }}</li>
-            <img :src="'store.languages.' + movie.original_language + '.flagImg'" alt="">
+            <li>{{ store.languages[movie.original_language].flagImg }}</li>
+            <img :src="addLanguageFlag(movie)" alt="">
             <li>{{ movie.vote_average }}</li>
         </ol>
     </div>
@@ -25,8 +25,8 @@ export default {
         addLanguageFlag(element) {
             // let languageFlag = 'https://flagicons.lipis.dev/flags/4x3/' + element.original_language + '.svg';
             let languageCode = element.original_language;
-            let languageFlag = 'store.languages.' + languageCode + '.flagImg';
-            console.log(element.original_language);
+            console.log(languageCode);
+            let languageFlag = store.languages[element.original_language].flagImg;
             return languageFlag;
         }
     },

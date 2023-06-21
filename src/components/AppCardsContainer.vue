@@ -4,7 +4,7 @@
         <ol v-for="movie in store.moviesList" class="mb-3">
             <li>{{ movie.title }}</li>
             <li>{{ movie.original_title }}</li>
-            <li>{{ movie.original_language }}</li>
+            <li>{{ addLanguageFlag(movie) }}</li>
             <li>{{ movie.vote_average }}</li>
         </ol>
     </div>
@@ -19,7 +19,11 @@ export default {
             store,
         }
     },
-    methods() {
+    methods: {
+        addLanguageFlag(element) {
+            let languageFlag = 'store.languages.' + element + '.original_language' + '.flagImg'
+            return languageFlag
+        }
     },
 }		
 </script>

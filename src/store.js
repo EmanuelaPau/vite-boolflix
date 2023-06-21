@@ -14,6 +14,12 @@ const store = reactive({
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/al.svg',
         },
 
+        'ar': {
+            language: 'Arabic',
+            languageCode: 'ar',
+            flagImg: 'https://upload.wikimedia.org/wikipedia/commons/b/bb/Arabic-Language-Flag.svg',
+        },
+
         'at': {
             language: 'Austrian',
             languageCode: 'at',

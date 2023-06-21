@@ -10,6 +10,9 @@
             <li v-if="!store.languages.hasOwnProperty(movie.original_language)">{{
                 movie.original_language }}</li>
             <li>{{ movie.vote_average }}</li>
+            <li>{{ ratingFromOneToFive(movie.vote_average) }}</li>
+            <img class="stars" v-for="index in ratingFromOneToFive(movie.vote_average)"
+                src="https://em-content.zobj.net/thumbs/240/apple/354/star_2b50.png" alt="stars">
         </ol>
 
     </div>
@@ -56,6 +59,11 @@ export default {
             let movieImgUrl = store.imgBaseUrl + element.poster_path;
             // console.log(movieImgUrl)
             return movieImgUrl
+        },
+
+        ratingFromOneToFive(rating) {
+            let ratingToFive = Math.ceil(rating / 2)
+            return ratingToFive
         }
     }
 }
@@ -71,5 +79,9 @@ img.flag {
 
 img.poster {
     width: 300px;
+}
+
+img.stars {
+    width: 20px;
 }
 </style> 

@@ -1,6 +1,7 @@
 <template>
     <h1>Movies</h1>
-    <div v-for="movie in  store.moviesList " class="mt-3">
+    <div v-for="movie in  store.moviesList " class="mt-3" :movie=movie :movieTitle=movie.title
+        :MovieOriginalTitle=movie.original_title :MovieLanguage=movie.original_language :MovieRating=movie.vote_average>
         <!-- <MovieCard /> -->
         <img class="poster" :src="addMovieImg(movie)" :alt="movie.title + ' poster'">
         <ol class="mb-3">
@@ -18,14 +19,15 @@
 
     </div>
     <h1>Series</h1>
-    <div v-for=" series  in  store.tvSeriesList ">
+    <div v-for=" series  in  store.tvSeriesList" :series="series" :seriesTitle=series.name
+        :seriesOriginalName=series.original_name :seriesLanguage=series.original_language :seriesRating=series.vote_average>
 
-        <img class="poster" :src="addMovieImg(series)" :alt="movie.title + ' poster'">
+        <img class="poster" :src="addMovieImg(series)" :alt="series.name + ' poster'">
         <ol class="mb-3">
             <li>{{ series.name }}</li>
             <li>{{ series.original_name }}</li>
             <img class="flag" :src="addLanguageFlag(series)"
-                :alt="store.languages[movie.original_language].language + ' flag'">
+                :alt="store.languages[series.original_language].language + ' flag'">
             <li v-if="!store.languages.hasOwnProperty(series.original_language)">{{
                 series.original_language }}</li>
             <li>{{ series.vote_average }}</li>

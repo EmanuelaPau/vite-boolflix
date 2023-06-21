@@ -4,7 +4,7 @@ const store = reactive({
     searchText: "",
     loading: true,
 
-    movieListElement: "",
+    moviesList: [],
     movieTtitle: "",
     originalMovieTitle: "",
     movieLanguage: "",

@@ -24,7 +24,6 @@ export default {
             store,
             apiKey: 'f962c0c469c36980eda0b0c8310fb32d',
             linkApi: ' https://api.themoviedb.org/3/search/movie',
-            movie: ''
         }
     },
     methods() {
@@ -40,7 +39,8 @@ export default {
         )
             .then(function (response) {
                 // handle success
-                console.log(response);
+                store.moviesList = response.data.results;
+                console.log(store.moviesList)
             })
             .catch(function (error) {
                 // handle error

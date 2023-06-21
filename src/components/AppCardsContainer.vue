@@ -5,6 +5,7 @@
             <li>{{ movie.title }}</li>
             <li>{{ movie.original_title }}</li>
             <li>{{ addLanguageFlag(movie) }}</li>
+            <img :src="'store.languages.' + movie.original_language + '.flagImg'" alt="">
             <li>{{ movie.vote_average }}</li>
         </ol>
     </div>
@@ -17,12 +18,16 @@ export default {
     data() {
         return {
             store,
+
         }
     },
     methods: {
         addLanguageFlag(element) {
-            let languageFlag = 'store.languages.' + element + '.original_language' + '.flagImg'
-            return languageFlag
+            // let languageFlag = 'https://flagicons.lipis.dev/flags/4x3/' + element.original_language + '.svg';
+            let languageCode = element.original_language;
+            let languageFlag = 'store.languages.' + languageCode + '.flagImg';
+            console.log(element.original_language);
+            return languageFlag;
         }
     },
 }		
@@ -30,4 +35,8 @@ export default {
 <style scoped lang="scss">
 @use '../styles/partials/_variables.scss';
 @use '../styles/partials/_mixins.scss';
+
+img {
+    height: 15px;
+}
 </style> 

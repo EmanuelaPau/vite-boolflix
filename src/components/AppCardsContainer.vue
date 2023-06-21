@@ -1,6 +1,12 @@
 <template>
-    <div>
-        <!-- <h3>AppCardsContainer</h3> -->
+    <div class="mt-3">
+        <!-- <MovieCard /> -->
+        <ol class="mb-3">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
     </div>
 </template>
 

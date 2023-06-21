@@ -2,8 +2,9 @@
     <div>
         <!-- Searchbar -->
         <form class="form-inline my-2 my-lg-0 d-flex">
-            <input class="form-control mr-sm-2 w-50" type="search" placeholder="Search" aria-label="Search">
-            <button @click="$emit('search, argument')" class="btn btn-primary" type="button">Ciao</button>
+            <input class="form-control mr-sm-2 w-50" type="search" placeholder="Search" aria-label="Search"
+                v-model="searchedText">
+            <button @click="$emit('search', searchedText)" class="btn btn-primary" type="button">Ciao</button>
         </form>
 
     </div>
@@ -17,6 +18,7 @@ export default {
     data() {
         return {
             store,
+            searchedText: '',
         }
     },
     methods() {

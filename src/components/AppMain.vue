@@ -1,8 +1,6 @@
 <template>
     <main>
-        <!-- <h2>AppMain</h2> -->
-        <AppHeader @search="console.log('ciao')" />
-        <!-- <p>{{ store.moviesList }}</p> -->
+        <AppHeader @search="searchMovie()" />
         <AppCardsContainer />
     </main>
 </template>
@@ -39,7 +37,10 @@ export default {
                 .then((response) => {
                     // handle success
                     store.moviesList = response.data.results;
-                    console.log(store.moviesList)
+                    console.log('Movie List arriving');
+                    console.log(element);
+                    console.log(store.moviesList);
+                    element = "";
                 })
                 .catch(function (error) {
                     // handle error

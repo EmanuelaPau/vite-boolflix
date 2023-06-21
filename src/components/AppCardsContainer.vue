@@ -5,17 +5,12 @@
 </template>
 
 <script>
-
+import { store } from '../store.js';
 export default {
     name: 'AppcardContainer',
     data() {
         return {
-
-            // links: [
-            //	'gino',
-            //	'ciao',
-            //	]
-
+            store,
         }
     },
     methods() {

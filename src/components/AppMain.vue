@@ -11,7 +11,7 @@
 import AppHeader from './AppHeader.vue'
 import AppCardsContainer from './AppCardsContainer.vue'
 import axios from 'axios'
-
+import { store } from '../store.js';
 
 export default {
     name: 'AppMain',
@@ -21,6 +21,7 @@ export default {
     },
     data() {
         return {
+            store,
             apiKey: 'f962c0c469c36980eda0b0c8310fb32d',
             linkApi: ' https://api.themoviedb.org/3/search/movie',
             movie: ''

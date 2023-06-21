@@ -2,6 +2,7 @@
     <main>
         <!-- <h2>AppMain</h2> -->
         <AppHeader @search="console.log('ciao')" />
+        <!-- <p>{{ store.moviesList }}</p> -->
         <AppCardsContainer />
     </main>
 </template>
@@ -26,7 +27,29 @@ export default {
             linkApi: ' https://api.themoviedb.org/3/search/movie',
         }
     },
-    methods() {
+    methods: {
+        searchMovie(element) {
+            axios.get(this.linkApi, {
+                params: {
+                    api_key: 'f962c0c469c36980eda0b0c8310fb32d',
+                    query: element,
+                }
+            }
+            )
+                .then((response) => {
+                    // handle success
+                    store.moviesList = response.data.results;
+                    console.log(store.moviesList)
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+                .finally(function () {
+                    // always executed
+                });
+
+        }
     },
 
     created() {
@@ -37,7 +60,7 @@ export default {
             }
         }
         )
-            .then(function (response) {
+            .then((response) => {
                 // handle success
                 store.moviesList = response.data.results;
                 console.log(store.moviesList)

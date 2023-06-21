@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- <h2>AppMain</h2> -->
-        <AppHeader />
+        <AppHeader @search="console.log('ciao')" />
         <AppCardsContainer />
     </main>
 </template>

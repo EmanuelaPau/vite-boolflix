@@ -1,6 +1,6 @@
 <template>
     <main>
-        <AppHeader @search="searchMovie()" />
+        <AppHeader @search="searchMovie" />
         <AppCardsContainer />
     </main>
 </template>
@@ -39,8 +39,6 @@ export default {
                     store.moviesList = response.data.results;
                     console.log('Movie List arriving');
                     console.log(element);
-                    console.log(store.moviesList);
-                    element = "";
                 })
                 .catch(function (error) {
                     // handle error

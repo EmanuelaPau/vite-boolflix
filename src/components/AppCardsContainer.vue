@@ -1,11 +1,11 @@
 <template>
     <div class="mt-3">
         <!-- <MovieCard /> -->
-        <ol class="mb-3">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+        <ol v-for="movie in store.moviesList" class="mb-3">
+            <li>{{ movie.title }}</li>
+            <li>{{ movie.original_title }}</li>
+            <li>{{ movie.original_language }}</li>
+            <li>{{ movie.vote_average }}</li>
         </ol>
     </div>
 </template>

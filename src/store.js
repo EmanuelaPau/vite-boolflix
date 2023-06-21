@@ -6,8 +6,7 @@ const store = reactive({
 
     moviesList: [],
     tvSeriesList: [],
-    imgBaseUrl: ' https://image.tmdb.org/t/p/ ',
-
+    imgBaseUrl: ' https://image.tmdb.org/t/p/w500',
     languages: {
         'al': {
             language: 'albanian',

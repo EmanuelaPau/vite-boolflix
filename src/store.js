@@ -6,9 +6,9 @@ const store = reactive({
 
     moviesList: [],
     tvSeriesList: [],
-    imgBaseUrl: ' https://image.tmdb.org/t/p/w300',
+    imgBaseUrl: ' https://image.tmdb.org/t/p/w342',
     languages: {
-        'al': {
+        'sq': {
             language: 'albanian',
             languageCode: 'al',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/al.svg',
@@ -19,12 +19,12 @@ const store = reactive({
             languageCode: 'at',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/at.svg',
         },
-        'by': {
+        'be': {
             language: 'Belarusian',
             languageCode: 'by',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/by.svg',
         },
-        'be': {
+        'bl': {
             language: 'Belgian',
             languageCode: 'be',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/be.svg',
@@ -44,12 +44,12 @@ const store = reactive({
             languageCode: 'hr',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/hr.svg',
         },
-        'cz': {
+        'cs': {
             language: 'Czech',
             languageCode: 'cz',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/cz.svg',
         },
-        'dk': {
+        'da': {
             language: 'Danish',
             languageCode: 'dk',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/dk.svg',
@@ -74,7 +74,7 @@ const store = reactive({
             languageCode: 'de',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/de.svg',
         },
-        'gr': {
+        'el': {
             language: 'Greek',
             languageCode: 'gr',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/gr.svg',
@@ -90,8 +90,8 @@ const store = reactive({
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/is.svg',
         },
 
-        'in': {
-            language: 'Indian',
+        'hi': {
+            language: 'hindi',
             languageCode: 'in',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/in.svg',
         },
@@ -120,7 +120,7 @@ const store = reactive({
             languageCode: 'no',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/no.svg',
         },
-        'ph': {
+        'fil': {
             language: 'Philippine',
             languageCode: 'ph',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/ph.svg',
@@ -131,7 +131,7 @@ const store = reactive({
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/pl.svg',
         },
         'pt': {
-            language: 'Portughese',
+            language: 'Portuguese',
             languageCode: 'pt',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/pt.svg',
         },

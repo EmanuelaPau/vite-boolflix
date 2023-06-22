@@ -1,6 +1,6 @@
 <template>
     <!-- <Movie Card /> -->
-    <div class="movie-card">
+    <div class="movie-card ">
         <div v-if="movie.poster_path == null" class="no-img-title p-3">
             <h1 class="my_title">{{ title }}</h1>
         </div>
@@ -85,6 +85,7 @@ div.movie-card {
     height: 430px;
     overflow: hidden;
     position: relative;
+    cursor: pointer;
 
     img.poster {
         width: 300px;

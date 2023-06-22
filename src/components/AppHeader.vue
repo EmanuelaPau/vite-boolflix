@@ -26,49 +26,47 @@
                 <a class="text-reset" href=""><i class="bell fa-regular fa-bell me-3"></i></a>
 
                 <!-- Account nav menu  -->
-                <div class="account-menu position-relative" @mouseover="isAccountAccordionHover = true"
-                    @mouseleave="isAccountAccordionHover = false">
+                <div class="account-menu position-relative" @mouseover="isAccountAccordionHover = true">
                     <img id="" class="me-2 profile-pic" src="../../public/profile_pic_1.png" alt="profile pic">
                     <a class="text-reset" href=""><i class="fa-solid fa-sort-down arrow"></i></a>
                     <!-- Account menu  -->
                     <div :class="isAccountAccordionHover == false ? 'd-none' : 'd-block'"
-                        class="account-accordion-menu pt-4" @mouseover="isAccountAccordionHover = true"
-                        @mouseleave="isAccountAccordionHover = false">
+                        class="account-accordion-menu pt-4" @mouseleave="isAccountAccordionHover = false">
                         <div class="w-100 d-flex align-items-center mb-3">
                             <img class="profile-pic me-2" src="../../public/profile_pic_2.png" alt="profile pic">
-                            <p class="m-0">Mamma</p>
+                            <p class="m-0 accordion-item">Mamma</p>
                         </div>
                         <div class="w-100 d-flex align-items-center mb-3">
                             <img class="profile-pic me-2" src="../../public/profile_pic_3.png" alt="profile pic">
-                            <p class="m-0">Babbo</p>
+                            <p class="m-0 accordion-item">Babbo</p>
                         </div>
                         <div class="w-100 d-flex align-items-center mb-3">
                             <img class="profile-pic me-2" src="../../public/profile_pic_4.png" alt="profile pic">
-                            <p class="m-0">Sorella</p>
+                            <p class="m-0 accordion-item">Sorella</p>
                         </div>
                         <div class="w-100 d-flex align-items-center mb-3">
                             <img class="profile-pic me-2" src="../../public/profile_pic_kids.png" alt="profile pic">
-                            <p class="m-0">Kids</p>
+                            <p class="m-0 accordion-item">Kids</p>
                         </div>
 
                         <div class="w-100 d-flex align-items-center mb-3">
                             <i class="fa-solid fa-pencil me-2"></i>
-                            <p class="m-0">Gestisci i profili</p>
+                            <p class="m-0 accordion-item">Gestisci i profili</p>
                         </div>
                         <div class="w-100 d-flex align-items-center mb-3">
                             <i class="fa-solid fa-suitcase me-2"></i>
-                            <p class="m-0">Trasferisci profilo</p>
+                            <p class="m-0 accordion-item">Trasferisci profilo</p>
                         </div>
                         <div class="w-100 d-flex align-items-center mb-3">
                             <i class="fa-regular fa-user me-2"></i>
-                            <p class="m-0">Account</p>
+                            <p class="m-0 accordion-item">Account</p>
                         </div>
                         <div class="w-100 d-flex align-items-center mb-3">
                             <i class="fa-regular fa-circle-question me-2"></i>
-                            <p class="m-0">Centro assistenza</p>
+                            <p class="m-0 accordion-item">Centro assistenza</p>
                         </div>
                         <div class="w-100 d-flex align-items-center mb-0 pt-2 border-top ">
-                            <p class="m-0 w-100 text-center">Esci da netflix</p>
+                            <p class="m-0 w-100 text-center accordion-item">Esci da netflix</p>
                         </div>
                     </div>
 
@@ -182,5 +180,9 @@ i.arrow {
     height: 1rem;
     display: inline-block;
     transition: .3s all;
+}
+
+p.accordion-item:hover {
+    text-decoration: underline;
 }
 </style> 

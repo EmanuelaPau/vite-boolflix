@@ -8,8 +8,8 @@
         <!-- Movie infobox  -->
         <div class="movie-infobox">
             <h1 class="my_title">{{ title }}</h1>
-            <p class="text-light">{{ originalTitle }}</p>
-            <div class="d-flex justify-content-left">
+            <p class="text-light mb-1">{{ originalTitle }}</p>
+            <div class="d-flex justify-content-left mb-1">
                 <div class="d-flex align-items-center">
                     <p class="me-2 mb-0">Lingua:</p>
                     <img class="flag me-2" :src="addLanguageFlag(movie)"
@@ -22,6 +22,7 @@
                         src="https://em-content.zobj.net/thumbs/240/apple/354/star_2b50.png" alt="star icon">
                 </div>
             </div>
+            <p class="overview">{{ movie.overview.substring(0, 120) }}...</p>
         </div>
     </div>
 </template>
@@ -133,13 +134,17 @@ div.movie-card {
 
 div.movie-card:hover {
     img.poster {
-        height: 250px;
+        height: 200px;
     }
 
     div.movie-infobox {
         display: block;
         opacity: 1;
     }
+}
+
+p.overview {
+    font-size: .85rem;
 }
 </style> 
 

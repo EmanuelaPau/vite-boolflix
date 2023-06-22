@@ -1,7 +1,12 @@
 <template>
-    <!-- <div class="other-titles">
-        Altri titoli da scoprire:
-    </div> -->
+    <div class="other-titles mb-2 d-flex align-items-top flex-wrap">
+        <p class="text-light me-4">Altri titoli da scoprire:</p>
+        <ul class="other-list d-flex flex-wrap list-unstyled">
+            <li class="me-3 border-end pe-3" v-for="other in store.moviesList.slice(10, 20)"><a
+                    class="text-reset text-decoration-none" href="">{{ other.title
+                    }}</a></li>
+        </ul>
+    </div>
     <!-- Movies -->
     <h1>Film</h1>
     <div class="d-flex flex-wrap gap-2 mb-4">
@@ -99,5 +104,13 @@ h1.my_title {
 
 p.text-light {
     color: rgb(131, 131, 131) !important;
+}
+
+ul.other-list {
+    width: 85%;
+
+    li:hover {
+        color: #e50914;
+    }
 }
 </style> 

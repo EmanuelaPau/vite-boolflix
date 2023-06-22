@@ -3,39 +3,15 @@
         Altri titoli da scoprire:
     </div> -->
     <!-- Movies -->
-    <h1>Movies</h1>
+    <h1>Film</h1>
 
     <div class="d-flex flex-wrap gap-2">
-        <div v-for="movie in    store.moviesList   " class="mt-3 movie-card" :movie=movie :title=movie.title
-            :originalTitle=movie.original_title :language=movie.original_language :rating=movie.vote_average>
-            <!-- <Movie Card /> -->
-            <div class="movie-card">
-                <img class="poster rounded-1" :src="addMovieImg(movie)" :alt="movie.title + ' poster'">
-                <!-- Movie infobox  -->
-                <div class="movie-infobox">
-                    <h1 class="my_title">{{ movie.title }}</h1>
-                    <p class="text-light">{{ movie.original_title }}</p>
-                    <div class="d-flex justify-content-left">
-                        <div class="d-flex align-items-center">
-                            <p class="me-2 mb-0">Lingua:</p>
-                            <img class="flag me-2" :src="addLanguageFlag(movie)"
-                                :alt="!store.languages.hasOwnProperty(movie.original_language) ? 'flag' : store.languages[movie.original_language].language + ' flag'">
-                        </div>
-                        <span>|</span>
-                        <div class="d-flex align-items-center">
-                            <p class="ms-2 me-2 mb-0">Reviews:</p>
-                            <img class="stars" v-for="   index    in    ratingFromOneToFive(movie.vote_average)   "
-                                src="https://em-content.zobj.net/thumbs/240/apple/354/star_2b50.png" alt="star icon">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <MovieCard v-for="movie in    store.moviesList   " class="mt-3 movie-card" :movie=movie :title=movie.title
+            :originalTitle=movie.original_title :language=movie.original_language :rating=movie.vote_average />
     </div>
 
     <!-- Series -->
-    <h1>Series</h1>
+    <h1>Serie Tv</h1>
     <div class="d-flex flex-wrap gap-2">
         <div class="mt-3 movie-card" v-for=" series in store.tvSeriesList" :movie="series" :title=series.name
             :originalTitle=series.original_name :language=series.original_language :rating=series.vote_average>
@@ -67,8 +43,13 @@
 
 <script>
 import { store } from '../store.js';
+import MovieCard from './MovieCard.vue'
 export default {
     name: 'AppcardContainer',
+    components: {
+        MovieCard
+    },
+
     data() {
         return {
             store,

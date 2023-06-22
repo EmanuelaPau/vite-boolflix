@@ -1,6 +1,6 @@
 <template>
     <h1>Movies</h1>
-    <div v-for="movie in  store.moviesList " class="mt-3" :movie=movie :movieTitle=movie.title
+    <div v-for="movie in    store.moviesList   " class="mt-3" :movie=movie :movieTitle=movie.title
         :MovieOriginalTitle=movie.original_title :MovieLanguage=movie.original_language :MovieRating=movie.vote_average>
         <!-- <MovieCard /> -->
         <img class="poster" :src="addMovieImg(movie)" :alt="movie.title + ' poster'">
@@ -8,18 +8,18 @@
             <li>{{ movie.title }}</li>
             <li>{{ movie.original_title }}</li>
             <img class="flag" :src="addLanguageFlag(movie)"
-                :alt="store.languages[movie.original_language].language + ' flag'">
+                :alt="!store.languages.hasOwnProperty(movie.original_language) ? 'flag' : store.languages[movie.original_language].language + ' flag'">
             <li v-if="!store.languages.hasOwnProperty(movie.original_language)">{{
                 movie.original_language }}</li>
             <li>{{ movie.vote_average }}</li>
             <li>{{ ratingFromOneToFive(movie.vote_average) }}</li>
-            <img class="stars" v-for=" index  in  ratingFromOneToFive(movie.vote_average) "
+            <img class="stars" v-for="   index    in    ratingFromOneToFive(movie.vote_average)   "
                 src="https://em-content.zobj.net/thumbs/240/apple/354/star_2b50.png" alt="star icon">
         </ol>
 
     </div>
     <h1>Series</h1>
-    <div v-for=" series  in  store.tvSeriesList" :series="series" :seriesTitle=series.name
+    <div v-for="   series    in    store.tvSeriesList  " :series="series" :seriesTitle=series.name
         :seriesOriginalName=series.original_name :seriesLanguage=series.original_language :seriesRating=series.vote_average>
 
         <img class="poster" :src="addMovieImg(series)" :alt="series.name + ' poster'">
@@ -27,7 +27,7 @@
             <li>{{ series.name }}</li>
             <li>{{ series.original_name }}</li>
             <img class="flag" :src="addLanguageFlag(series)"
-                :alt="store.languages[series.original_language].language + ' flag'">
+                :alt="!store.languages.hasOwnProperty(series.original_language) ? 'flag' : store.languages[series.original_language].language + ' flag'">
             <li v-if="!store.languages.hasOwnProperty(series.original_language)">{{
                 series.original_language }}</li>
             <li>{{ series.vote_average }}</li>

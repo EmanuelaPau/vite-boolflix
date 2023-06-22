@@ -1,39 +1,67 @@
 <template>
+    <!-- <div class="other-titles">
+        Altri titoli da scoprire:
+    </div> -->
     <!-- Movies -->
     <h1>Movies</h1>
-    <div v-for="movie in    store.moviesList   " class="mt-3" :movie=movie :movieTitle=movie.title
-        :MovieOriginalTitle=movie.original_title :MovieLanguage=movie.original_language :MovieRating=movie.vote_average>
-        <!-- <Movie Card /> -->
-        <img class="poster" :src="addMovieImg(movie)" :alt="movie.title + ' poster'">
-        <ol class="mb-3">
-            <li>{{ movie.title }}</li>
-            <li>{{ movie.original_title }}</li>
-            <img class="flag" :src="addLanguageFlag(movie)"
-                :alt="!store.languages.hasOwnProperty(movie.original_language) ? 'flag' : store.languages[movie.original_language].language + ' flag'">
-            <li v-if="!store.languages.hasOwnProperty(movie.original_language)">{{
-                movie.original_language }}</li>
-            <li>{{ movie.vote_average }}</li>
-            <li>{{ ratingFromOneToFive(movie.vote_average) }}</li>
-            <img class="stars" v-for="   index    in    ratingFromOneToFive(movie.vote_average)   "
-                src="https://em-content.zobj.net/thumbs/240/apple/354/star_2b50.png" alt="star icon">
-        </ol>
+
+    <div class="d-flex flex-wrap gap-2">
+        <div v-for="movie in    store.moviesList   " class="mt-3 movie-card" :movie=movie :title=movie.title
+            :originalTitle=movie.original_title :language=movie.original_language :rating=movie.vote_average>
+            <!-- <Movie Card /> -->
+            <div class="movie-card">
+                <img class="poster rounded-1" :src="addMovieImg(movie)" :alt="movie.title + ' poster'">
+                <!-- Movie infobox  -->
+                <div class="movie-infobox">
+                    <h1 class="my_title">{{ movie.title }}</h1>
+                    <p class="text-light">{{ movie.original_title }}</p>
+                    <div class="d-flex justify-content-left">
+                        <div class="d-flex align-items-center">
+                            <p class="me-2 mb-0">Lingua:</p>
+                            <img class="flag me-2" :src="addLanguageFlag(movie)"
+                                :alt="!store.languages.hasOwnProperty(movie.original_language) ? 'flag' : store.languages[movie.original_language].language + ' flag'">
+                        </div>
+                        <span>|</span>
+                        <div class="d-flex align-items-center">
+                            <p class="ms-2 me-2 mb-0">Reviews:</p>
+                            <img class="stars" v-for="   index    in    ratingFromOneToFive(movie.vote_average)   "
+                                src="https://em-content.zobj.net/thumbs/240/apple/354/star_2b50.png" alt="star icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- Series -->
     <h1>Series</h1>
-    <div v-for="series in store.tvSeriesList" :series="series" :seriesTitle=series.name
-        :seriesOriginalName=series.original_name :seriesLanguage=series.original_language :seriesRating=series.vote_average>
-        <!-- <Series Card /> -->
-        <img class="poster" :src="addMovieImg(series)" :alt="series.name + ' poster'">
-        <ol class="mb-3">
-            <li>{{ series.name }}</li>
-            <li>{{ series.original_name }}</li>
-            <img class="flag" :src="addLanguageFlag(series)"
-                :alt="!store.languages.hasOwnProperty(series.original_language) ? 'flag' : store.languages[series.original_language].language + ' flag'">
-            <li v-if="!store.languages.hasOwnProperty(series.original_language)">{{
-                series.original_language }}</li>
-            <li>{{ series.vote_average }}</li>
-        </ol>
+    <div class="d-flex flex-wrap gap-2">
+        <div class="mt-3 movie-card" v-for=" series in store.tvSeriesList" :movie="series" :title=series.name
+            :originalTitle=series.original_name :language=series.original_language :rating=series.vote_average>
+
+            <div class="movie-card">
+                <img class="poster rounded-1" :src="addMovieImg(series)" :alt="series.name + ' poster'">
+                <!-- Movie infobox  -->
+                <div class="movie-infobox">
+                    <h1 class="my_title">{{ series.name }}</h1>
+                    <p class="text-light">{{ series.original_name }}</p>
+                    <div class="d-flex justify-content-left">
+                        <div class="d-flex align-items-center">
+                            <p class="me-2 mb-0">Lingua:</p>
+                            <img class="flag me-2" :src="addLanguageFlag(series)"
+                                :alt="!store.languages.hasOwnProperty(series.original_language) ? 'flag' : store.languages[series.original_language].language + ' flag'">
+                        </div>
+                        <span>|</span>
+                        <div class="d-flex align-items-center">
+                            <p class="ms-2 me-2 mb-0">Reviews:</p>
+                            <img class="stars" v-for="   index    in    ratingFromOneToFive(series.vote_average)   "
+                                src="https://em-content.zobj.net/thumbs/240/apple/354/star_2b50.png" alt="star icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -88,9 +116,29 @@ img.flag {
 
 img.poster {
     width: 300px;
+    height: 430px;
+    object-fit: cover;
+}
+
+div.movie-card {
+    width: 300px;
+}
+
+div.movie-infobox {
+    padding: 10px;
 }
 
 img.stars {
-    width: 20px;
+    width: 17px;
+    margin: 2px;
+}
+
+h1.my_title {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+p.text-light {
+    color: rgb(131, 131, 131) !important;
 }
 </style> 

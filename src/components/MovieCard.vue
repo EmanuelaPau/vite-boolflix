@@ -1,6 +1,9 @@
 <template>
     <!-- <Movie Card /> -->
     <div class="movie-card">
+        <div v-if="movie.poster_path == null" class="no-img-title p-3">
+            <h1 class="my_title">{{ title }}</h1>
+        </div>
         <img class="poster rounded-1" :src="addMovieImg(movie)" :alt="movie.title + ' poster'">
         <!-- Movie infobox  -->
         <div class="movie-infobox">
@@ -80,12 +83,25 @@ div.movie-card {
     transition: all 1s ease-out;
     height: 430px;
     overflow: hidden;
+    position: relative;
 
     img.poster {
         width: 300px;
         height: 430px;
         object-fit: cover;
         transition: all .5s ease-out;
+    }
+
+    div.no-img-title {
+        color: rgb(133, 133, 133);
+        width: 300px;
+        position: absolute;
+
+        h1 {
+            margin-top: 20px;
+            font-size: 1.7rem;
+            text-align: center;
+        }
     }
 
     div.movie-infobox {

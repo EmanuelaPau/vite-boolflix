@@ -14,7 +14,7 @@
     <h1>Serie Tv</h1>
     <div class="d-flex flex-wrap gap-2">
         <!-- Series  card-->
-        <MovieCard class="mt-3 movie-card" v-for=" series in store.tvSeriesList" :movie="series" :title=series.name
+        <MovieCard class="mt-3 movie-card" v-for=" series in store.tvSeriesList" :movie=series :title=series.name
             :originalTitle=series.original_name :language=series.original_language :rating=series.vote_average />
     </div>
 </template>

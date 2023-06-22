@@ -39,7 +39,6 @@ export default {
                     // handle success
                     store.moviesList = response.data.results;
                     console.log('Movie List arriving');
-                    console.log(element);
                     console.log(store.moviesList)
                 })
                 .catch(function (error) {
@@ -61,7 +60,6 @@ export default {
                     // handle success
                     store.tvSeriesList = response.data.results;
                     console.log('Series List arriving');
-                    console.log(element);
                     console.log(store.moviesList)
                 })
                 .catch(function (error) {
@@ -96,6 +94,28 @@ export default {
             .finally(function () {
                 // always executed
             });
+
+        axios.get(this.linkApiTv, {
+            params: {
+                api_key: 'f962c0c469c36980eda0b0c8310fb32d',
+                query: 'matrix',
+            }
+        }
+        )
+            .then((response) => {
+                // handle success
+                store.tvSeriesList = response.data.results;
+                console.log('Series List arriving');
+                console.log(store.moviesList)
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .finally(function () {
+                // always executed
+            });
+
 
     },
 }		

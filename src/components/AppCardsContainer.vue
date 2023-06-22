@@ -6,6 +6,7 @@
     <h1>Film</h1>
 
     <div class="d-flex flex-wrap gap-2">
+        <!-- Movie  -->
         <MovieCard v-for="movie in    store.moviesList   " class="mt-3 movie-card" :movie=movie :title=movie.title
             :originalTitle=movie.original_title :language=movie.original_language :rating=movie.vote_average />
     </div>
@@ -13,31 +14,8 @@
     <!-- Series -->
     <h1>Serie Tv</h1>
     <div class="d-flex flex-wrap gap-2">
-        <div class="mt-3 movie-card" v-for=" series in store.tvSeriesList" :movie="series" :title=series.name
-            :originalTitle=series.original_name :language=series.original_language :rating=series.vote_average>
-
-            <div class="movie-card">
-                <img class="poster rounded-1" :src="addMovieImg(series)" :alt="series.name + ' poster'">
-                <!-- Movie infobox  -->
-                <div class="movie-infobox">
-                    <h1 class="my_title">{{ series.name }}</h1>
-                    <p class="text-light">{{ series.original_name }}</p>
-                    <div class="d-flex justify-content-left">
-                        <div class="d-flex align-items-center">
-                            <p class="me-2 mb-0">Lingua:</p>
-                            <img class="flag me-2" :src="addLanguageFlag(series)"
-                                :alt="!store.languages.hasOwnProperty(series.original_language) ? 'flag' : store.languages[series.original_language].language + ' flag'">
-                        </div>
-                        <span>|</span>
-                        <div class="d-flex align-items-center">
-                            <p class="ms-2 me-2 mb-0">Reviews:</p>
-                            <img class="stars" v-for="   index    in    ratingFromOneToFive(series.vote_average)   "
-                                src="https://em-content.zobj.net/thumbs/240/apple/354/star_2b50.png" alt="star icon">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <MovieCard class="mt-3 movie-card" v-for=" series in store.tvSeriesList" :movie="series" :title=series.name
+            :originalTitle=series.original_name :language=series.original_language :rating=series.vote_average />
     </div>
 </template>
 

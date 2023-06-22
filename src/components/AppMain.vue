@@ -24,6 +24,9 @@ export default {
             apiKey: 'f962c0c469c36980eda0b0c8310fb32d',
             linkApiMovie: ' https://api.themoviedb.org/3/search/movie',
             linkApiTv: ' https://api.themoviedb.org/3/search/tv',
+
+            linkApiMovieDiscover: ' https://api.themoviedb.org/3/discover/movie',
+            linkApiTvDiscover: ' https://api.themoviedb.org/3/discover/tv',
         }
     },
     methods: {
@@ -75,10 +78,12 @@ export default {
     },
 
     created() {
-        axios.get(this.linkApiMovie, {
+        axios.get(this.linkApiMovieDiscover, {
             params: {
                 api_key: 'f962c0c469c36980eda0b0c8310fb32d',
-                query: 'matrix'
+                language: 'en-US',
+                page: '1',
+                sort_by: 'popularity.desc',
             }
         }
         )
@@ -95,10 +100,12 @@ export default {
                 // always executed
             });
 
-        axios.get(this.linkApiTv, {
+        axios.get(this.linkApiTvDiscover, {
             params: {
                 api_key: 'f962c0c469c36980eda0b0c8310fb32d',
-                query: 'matrix',
+                language: 'en-US',
+                page: '1',
+                sort_by: 'popularity.desc',
             }
         }
         )

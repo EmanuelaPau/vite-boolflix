@@ -4,12 +4,12 @@
         <div class="header-left d-flex justify-content-between align-items-center">
             <a href="#"><img id="bool-logo" class="me-4" src="../../public/boolflix_logo.png" alt="boolflix logo"></a>
             <ul class="navlist list-unstyled d-flex align-items-center m-0">
-                <li class="m-2"><a href="">Home</a></li>
-                <li class="m-2"><a href="">Serie TV</a></li>
-                <li class="m-2"><a href="">Film</a></li>
-                <li class="m-2"><a href="">Nuovi e Popolari</a></li>
-                <li class="m-2"><a href="">La mia nuova lista</a></li>
-                <li class="m-2"><a href="">Sfoglia per lingua</a></li>
+                <li class="m-2 d-none d-md-block"><a href="">Home</a></li>
+                <li class="m-2 d-none d-md-block"><a href="">Serie TV</a></li>
+                <li class="m-2 d-none d-md-block"><a href="">Film</a></li>
+                <li class="m-2 d-none d-lg-block"><a href="">Nuovi e Popolari</a></li>
+                <li class="m-2 d-none d-xl-block"><a href="">La mia nuova lista</a></li>
+                <li class="m-2 d-none d-xxl-block"><a href="">Sfoglia per lingua</a></li>
             </ul>
         </div>
         <!-- header right -->
@@ -22,7 +22,7 @@
                 </button>
                 <input class="my-searchbar me-3" type="text" placeholder="Titoli, persone, generi" aria-label="Search"
                     v-model="searchedText" @keyup.enter="$emit('search', searchedText), searchedText = ''">
-                <a class="text-reset me-3 text-decoration-none " href="#">Bambini</a>
+                <a class="text-reset me-3 text-decoration-none d-none d-lg-block" href="#">Bambini</a>
                 <a class="text-reset" href=""><i class="bell fa-regular fa-bell me-3"></i></a>
                 <div class="account-menu position-relative">
                     <img id="profile-pic" class="me-2" src="../../public/profile_pic_1.png" alt="profile pic">

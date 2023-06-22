@@ -1,5 +1,5 @@
 <template>
-    <div class="other-titles mb-2 d-flex align-items-top flex-wrap">
+    <div class="other-titles mb-2 d-flex align-items-top flex-wrap d-none d-md-block">
         <p class="text-light me-4">Altri titoli da scoprire:</p>
         <ul class="other-list d-flex flex-wrap list-unstyled">
             <li class="me-3 border-end pe-3" v-for="other in store.moviesList.slice(10, 20)"><a
@@ -9,7 +9,7 @@
     </div>
     <!-- Movies -->
     <h1>Film</h1>
-    <div class="d-flex flex-wrap gap-2 mb-4">
+    <div class="d-flex flex-wrap gap-2 mb-4 ">
         <!-- Movie  card-->
         <MovieCard v-for="movie in    store.moviesList   " class="mt-3 movie-card" :movie=movie :title=movie.title
             :originalTitle=movie.original_title :language=movie.original_language :rating=movie.vote_average />

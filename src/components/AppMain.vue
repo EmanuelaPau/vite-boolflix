@@ -1,5 +1,5 @@
 <template>
-    <main class="my_container">
+    <main class="my_container px-2 px-sm-5 ">
         <AppHeader @search="searchMovie" />
         <AppCardsContainer />
     </main>

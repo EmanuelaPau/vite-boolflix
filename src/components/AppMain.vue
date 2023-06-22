@@ -40,6 +40,7 @@ export default {
                     store.moviesList = response.data.results;
                     console.log('Movie List arriving');
                     console.log(element);
+                    console.log(store.moviesList)
                 })
                 .catch(function (error) {
                     // handle error
@@ -59,8 +60,9 @@ export default {
                 .then((response) => {
                     // handle success
                     store.tvSeriesList = response.data.results;
-                    console.log('Movie List arriving');
+                    console.log('Series List arriving');
                     console.log(element);
+                    console.log(store.moviesList)
                 })
                 .catch(function (error) {
                     // handle error

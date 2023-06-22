@@ -45,6 +45,11 @@ const store = reactive({
             languageCode: 'cn',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/cn.svg',
         },
+        'cn': {
+            language: 'Chinese',
+            languageCode: 'cn',
+            flagImg: 'https://flagicons.lipis.dev/flags/4x3/cn.svg',
+        },
         'hr': {
             language: 'Croatian',
             languageCode: 'hr',
@@ -156,12 +161,12 @@ const store = reactive({
             languageCode: 'es',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/es.svg',
         },
-        'se': {
+        'sv': {
             language: 'Swedish',
             languageCode: 'se',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/se.svg',
         },
-        'th': {
+        'ta': {
             language: 'Thai',
             languageCode: 'th',
             flagImg: 'https://flagicons.lipis.dev/flags/4x3/th.svg',

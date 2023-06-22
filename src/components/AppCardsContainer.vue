@@ -1,8 +1,9 @@
 <template>
+    <!-- Movies -->
     <h1>Movies</h1>
     <div v-for="movie in    store.moviesList   " class="mt-3" :movie=movie :movieTitle=movie.title
         :MovieOriginalTitle=movie.original_title :MovieLanguage=movie.original_language :MovieRating=movie.vote_average>
-        <!-- <MovieCard /> -->
+        <!-- <Movie Card /> -->
         <img class="poster" :src="addMovieImg(movie)" :alt="movie.title + ' poster'">
         <ol class="mb-3">
             <li>{{ movie.title }}</li>
@@ -16,12 +17,13 @@
             <img class="stars" v-for="   index    in    ratingFromOneToFive(movie.vote_average)   "
                 src="https://em-content.zobj.net/thumbs/240/apple/354/star_2b50.png" alt="star icon">
         </ol>
-
     </div>
-    <h1>Series</h1>
-    <div v-for="   series    in    store.tvSeriesList  " :series="series" :seriesTitle=series.name
-        :seriesOriginalName=series.original_name :seriesLanguage=series.original_language :seriesRating=series.vote_average>
 
+    <!-- Series -->
+    <h1>Series</h1>
+    <div v-for="series in store.tvSeriesList" :series="series" :seriesTitle=series.name
+        :seriesOriginalName=series.original_name :seriesLanguage=series.original_language :seriesRating=series.vote_average>
+        <!-- <Series Card /> -->
         <img class="poster" :src="addMovieImg(series)" :alt="series.name + ' poster'">
         <ol class="mb-3">
             <li>{{ series.name }}</li>
@@ -52,16 +54,19 @@ export default {
             }
             else {
                 let languageCode = element.original_language;
-                // console.log(languageCode);
                 let languageFlag = store.languages[element.original_language].flagImg;
                 return languageFlag;
             }
         },
 
         addMovieImg(element) {
-            // console.log(element.original_language)
-            let movieImgUrl = store.imgBaseUrl + element.poster_path;
-            // console.log(movieImgUrl)
+            let movieImgUrl
+            if (element.poster_path == null) {
+                movieImgUrl = `https://italiancinemaaudiences.org/wp-content/themes/trend/assets/img/empty/424x500.png`
+            } else {
+                movieImgUrl = store.imgBaseUrl + element.poster_path;
+                console.log(movieImgUrl)
+            }
             return movieImgUrl
         },
 

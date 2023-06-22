@@ -17,7 +17,9 @@
             <!-- Searchbar -->
             <div class="d-flex">
                 <button @click="$emit('search', searchedText), searchedText = ''"
-                    class="btn btn-primary my-searchbar-button rounded-0" type="button"></button>
+                    class="btn btn-primary my-searchbar-button rounded-0 p-0 px-2" type="button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
                 <input class=" mr-sm-2 my-searchbar" type="text" placeholder="Titoli, persone, generi" aria-label="Search"
                     v-model="searchedText" @keyup.enter="$emit('search', searchedText), searchedText = ''">
             </div>

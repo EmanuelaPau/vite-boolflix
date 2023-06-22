@@ -75,35 +75,57 @@ export default {
 @use '../styles/partials/_variables.scss';
 @use '../styles/partials/_mixins.scss';
 
-img.flag {
-    height: 15px;
-}
-
-img.poster {
-    width: 300px;
-    height: 430px;
-    object-fit: cover;
-}
-
 div.movie-card {
     width: 300px;
+    transition: all 1s ease-out;
+    height: 430px;
+    overflow: hidden;
+
+    img.poster {
+        width: 300px;
+        height: 430px;
+        object-fit: cover;
+        transition: all .5s ease-out;
+    }
+
+    div.movie-infobox {
+        padding: 10px;
+        // display: none;
+        opacity: 0;
+        transition: all .3s ease;
+
+
+        h1.my_title {
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+        p.text-light {
+            color: rgb(131, 131, 131) !important;
+        }
+
+        img.flag {
+            height: 15px;
+        }
+
+        img.stars {
+            width: 17px;
+            margin: 2px;
+        }
+    }
 }
 
-div.movie-infobox {
-    padding: 10px;
-}
+div.movie-card:hover {
+    img.poster {
+        height: 250px;
+    }
 
-img.stars {
-    width: 17px;
-    margin: 2px;
-}
-
-h1.my_title {
-    font-size: 1.75rem;
-    font-weight: 600;
-}
-
-p.text-light {
-    color: rgb(131, 131, 131) !important;
+    div.movie-infobox {
+        display: block;
+        opacity: 1;
+    }
 }
 </style> 
+
+
+

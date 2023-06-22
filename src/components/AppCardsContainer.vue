@@ -4,9 +4,8 @@
     </div> -->
     <!-- Movies -->
     <h1>Film</h1>
-
-    <div class="d-flex flex-wrap gap-2">
-        <!-- Movie  -->
+    <div class="d-flex flex-wrap gap-2 mb-4">
+        <!-- Movie  card-->
         <MovieCard v-for="movie in    store.moviesList   " class="mt-3 movie-card" :movie=movie :title=movie.title
             :originalTitle=movie.original_title :language=movie.original_language :rating=movie.vote_average />
     </div>
@@ -14,6 +13,7 @@
     <!-- Series -->
     <h1>Serie Tv</h1>
     <div class="d-flex flex-wrap gap-2">
+        <!-- Series  card-->
         <MovieCard class="mt-3 movie-card" v-for=" series in store.tvSeriesList" :movie="series" :title=series.name
             :originalTitle=series.original_name :language=series.original_language :rating=series.vote_average />
     </div>

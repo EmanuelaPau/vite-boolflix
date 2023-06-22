@@ -1,5 +1,5 @@
 <template>
-    <header class="my_container d-flex justify-content-between align-items-center">
+    <header class="d-flex justify-content-between align-items-center">
         <!-- header left  -->
         <div class="header-left d-flex justify-content-between align-items-center">
             <img id="bool-logo" class="me-4" src="../../public/boolflix_logo.png" alt="boolflix logo">
@@ -59,11 +59,10 @@ export default {
 @use '../styles/partials/_mixins.scss';
 
 header {
-    background-color: #101010;
-    color: white;
     width: 100%;
     height: 70px;
     font-size: .85rem;
+    margin-bottom: 40px;
 }
 
 img#bool-logo {

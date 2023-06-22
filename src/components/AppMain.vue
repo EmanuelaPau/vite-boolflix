@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main class="my_container">
         <AppHeader @search="searchMovie" />
         <AppCardsContainer />
     </main>
@@ -103,4 +103,9 @@ export default {
 <style scoped lang="scss">
 @use '../styles/partials/_variables.scss';
 @use '../styles/partials/_mixins.scss';
+
+main {
+    background-color: #101010;
+    color: white;
+}
 </style> 

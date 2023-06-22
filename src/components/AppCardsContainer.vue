@@ -65,7 +65,7 @@ export default {
                 movieImgUrl = `https://italiancinemaaudiences.org/wp-content/themes/trend/assets/img/empty/424x500.png`
             } else {
                 movieImgUrl = store.imgBaseUrl + element.poster_path;
-                console.log(movieImgUrl)
+                // console.log(movieImgUrl)
             }
             return movieImgUrl
         },

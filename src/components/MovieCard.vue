@@ -4,8 +4,8 @@
         <img class="poster rounded-1" :src="addMovieImg(movie)" :alt="movie.title + ' poster'">
         <!-- Movie infobox  -->
         <div class="movie-infobox">
-            <h1 class="my_title">{{ movie.title }}</h1>
-            <p class="text-light">{{ movie.original_title }}</p>
+            <h1 class="my_title">{{ title }}</h1>
+            <p class="text-light">{{ originalTitle }}</p>
             <div class="d-flex justify-content-left">
                 <div class="d-flex align-items-center">
                     <p class="me-2 mb-0">Lingua:</p>

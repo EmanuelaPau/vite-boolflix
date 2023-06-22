@@ -24,11 +24,52 @@
                     v-model="searchedText" @keyup.enter="$emit('search', searchedText), searchedText = ''">
                 <a class="text-reset me-3 text-decoration-none d-none d-lg-block" href="#">Bambini</a>
                 <a class="text-reset" href=""><i class="bell fa-regular fa-bell me-3"></i></a>
-                <div class="account-menu position-relative">
-                    <img id="profile-pic" class="me-2" src="../../public/profile_pic_1.png" alt="profile pic">
-                    <a class="text-reset" href=""><i class="fa-solid fa-sort-down arrow"></i></a>
-                    <div class="account-accordion-menu">
 
+                <!-- Account nav menu  -->
+                <div class="account-menu position-relative" @mouseover="isAccountAccordionHover = true"
+                    @mouseleave="isAccountAccordionHover = false">
+                    <img id="" class="me-2 profile-pic" src="../../public/profile_pic_1.png" alt="profile pic">
+                    <a class="text-reset" href=""><i class="fa-solid fa-sort-down arrow"></i></a>
+                    <!-- Account menu  -->
+                    <div :class="isAccountAccordionHover == false ? 'd-none' : 'd-block'"
+                        class="account-accordion-menu pt-4" @mouseover="isAccountAccordionHover = true"
+                        @mouseleave="isAccountAccordionHover = false">
+                        <div class="w-100 d-flex align-items-center mb-3">
+                            <img class="profile-pic me-2" src="../../public/profile_pic_2.png" alt="profile pic">
+                            <p class="m-0">Mamma</p>
+                        </div>
+                        <div class="w-100 d-flex align-items-center mb-3">
+                            <img class="profile-pic me-2" src="../../public/profile_pic_3.png" alt="profile pic">
+                            <p class="m-0">Babbo</p>
+                        </div>
+                        <div class="w-100 d-flex align-items-center mb-3">
+                            <img class="profile-pic me-2" src="../../public/profile_pic_4.png" alt="profile pic">
+                            <p class="m-0">Sorella</p>
+                        </div>
+                        <div class="w-100 d-flex align-items-center mb-3">
+                            <img class="profile-pic me-2" src="../../public/profile_pic_kids.png" alt="profile pic">
+                            <p class="m-0">Kids</p>
+                        </div>
+
+                        <div class="w-100 d-flex align-items-center mb-3">
+                            <i class="fa-solid fa-pencil me-2"></i>
+                            <p class="m-0">Gestisci i profili</p>
+                        </div>
+                        <div class="w-100 d-flex align-items-center mb-3">
+                            <i class="fa-solid fa-suitcase me-2"></i>
+                            <p class="m-0">Trasferisci profilo</p>
+                        </div>
+                        <div class="w-100 d-flex align-items-center mb-3">
+                            <i class="fa-regular fa-user me-2"></i>
+                            <p class="m-0">Account</p>
+                        </div>
+                        <div class="w-100 d-flex align-items-center mb-3">
+                            <i class="fa-regular fa-circle-question me-2"></i>
+                            <p class="m-0">Centro assistenza</p>
+                        </div>
+                        <div class="w-100 d-flex align-items-center mb-0 pt-2 border-top ">
+                            <p class="m-0 w-100 text-center">Esci da netflix</p>
+                        </div>
                     </div>
 
                 </div>
@@ -48,6 +89,7 @@ export default {
         return {
             store,
             searchedText: '',
+            isAccountAccordionHover: false,
         }
     },
     methods() {
@@ -103,7 +145,7 @@ i.bell {
     font-size: 1.3rem;
 }
 
-img#profile-pic {
+img.profile-pic {
     height: 30px;
     border-radius: 4px;
 }
@@ -119,13 +161,21 @@ img#profile-pic {
 }
 
 div.account-accordion-menu {
+    // display: none;
     position: absolute;
+    z-index: 1;
     top: 50px;
     right: 0;
-    // height: 500px;
     width: 250px;
-    background-color: aqua;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.895);
+    border: 1px solid rgba(255, 255, 255, 0.297);
 
+    i {
+        color: grey;
+        font-size: 1.3rem;
+        padding: 5px;
+    }
 }
 
 i.arrow {

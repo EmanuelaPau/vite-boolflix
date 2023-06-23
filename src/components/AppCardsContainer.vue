@@ -9,6 +9,7 @@
     </div>
     <!-- Movies -->
     <h1>Film</h1>
+    <NoResultsCard v-if="store.isMovieFound == false" />
     <div class="d-flex flex-wrap gap-2 mb-4 ">
         <!-- Movie  card-->
         <MovieCard v-for="movie in    store.moviesList   " class="mt-3 movie-card" :movie=movie :title=movie.title
@@ -17,6 +18,7 @@
 
     <!-- Series -->
     <h1>Serie Tv</h1>
+    <NoResultsCard v-if="store.isTvFound == false" />
     <div class="d-flex flex-wrap gap-2">
         <!-- Series  card-->
         <MovieCard class="mt-3 movie-card" v-for=" series in store.tvSeriesList" :movie=series :title=series.name
@@ -27,10 +29,12 @@
 <script>
 import { store } from '../store.js';
 import MovieCard from './MovieCard.vue'
+import NoResultsCard from './NoResultsCard.vue'
 export default {
     name: 'AppcardContainer',
     components: {
-        MovieCard
+        MovieCard,
+        NoResultsCard,
     },
 
     data() {

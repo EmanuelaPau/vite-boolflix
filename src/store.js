@@ -184,8 +184,9 @@ const store = reactive({
 
 
 
-    }
-
+    },
+    isMovieFound: true,
+    isTvFound: true,
 });
 
 export { store };

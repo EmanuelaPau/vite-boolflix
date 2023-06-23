@@ -12,6 +12,7 @@ import AppCardsContainer from './AppCardsContainer.vue'
 import axios from 'axios'
 import { store } from '../store.js';
 
+
 export default {
     name: 'AppMain',
     components: {
@@ -42,7 +43,12 @@ export default {
                     // handle success
                     store.moviesList = response.data.results;
                     console.log('Movie List arriving');
-                    console.log(store.moviesList)
+                    console.log(store.moviesList);
+                    if (store.moviesList.length <= 0) {
+                        store.isMovieFound = false;
+                    } else {
+                        store.isMovieFound = true;
+                    }
                 })
                 .catch(function (error) {
                     // handle error
@@ -63,7 +69,12 @@ export default {
                     // handle success
                     store.tvSeriesList = response.data.results;
                     console.log('Series List arriving');
-                    console.log(store.moviesList)
+                    console.log(store.tvSeriesList)
+                    if (store.tvSeriesList.length <= 0) {
+                        store.isTvFound = false;
+                    } else {
+                        store.isTvFound = true;
+                    }
                 })
                 .catch(function (error) {
                     // handle error

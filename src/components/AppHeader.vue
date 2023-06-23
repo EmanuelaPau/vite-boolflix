@@ -4,7 +4,8 @@
         <div class="header-left d-flex justify-content-between align-items-center position-relative">
             <a href="#"><img id="bool-logo" class="me-4" src="../../public/boolflix_logo.png" alt="boolflix logo"></a>
             <ul class="navlist list-unstyled d-flex align-items-center m-0 ">
-                <li class="m-2 d-none d-md-block" @click="store.isMovieSearchOn = true, store.isTvSearchOn = true">Home</li>
+                <li class="m-2 d-none d-md-block"
+                    @click="$emit('language', 'US'), store.isMovieSearchOn = true, store.isTvSearchOn = true">Home</li>
                 <li class="m-2 d-none d-md-block" @click="store.isMovieSearchOn = false, store.isTvSearchOn = true">Serie
                     TV</li>
                 <li class="m-2 d-none d-md-block" @click="store.isTvSearchOn = false, store.isMovieSearchOn = true">Film

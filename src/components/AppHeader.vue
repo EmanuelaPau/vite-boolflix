@@ -4,9 +4,11 @@
         <div class="header-left d-flex justify-content-between align-items-center position-relative">
             <a href="#"><img id="bool-logo" class="me-4" src="../../public/boolflix_logo.png" alt="boolflix logo"></a>
             <ul class="navlist list-unstyled d-flex align-items-center m-0 ">
-                <li class="m-2 d-none d-md-block"><a href="">Home</a></li>
-                <li class="m-2 d-none d-md-block"><a href="">Serie TV</a></li>
-                <li class="m-2 d-none d-md-block"><a href="">Film</a></li>
+                <li class="m-2 d-none d-md-block" @click="store.isMovieSearchOn = true, store.isTvSearchOn = true">Home</li>
+                <li class="m-2 d-none d-md-block" @click="store.isMovieSearchOn = false, store.isTvSearchOn = true">Serie
+                    TV</li>
+                <li class="m-2 d-none d-md-block" @click="store.isTvSearchOn = false, store.isMovieSearchOn = true">Film
+                </li>
                 <li class="m-2 d-none d-lg-block"><a href="">Nuovi e Popolari</a></li>
                 <li class="m-2 d-none d-xl-block"><a href="">La mia nuova lista</a></li>
                 <li @mouseover="isLanguageAccordionHover = true" class="m-2 d-none d-xxl-block"><a href="">Sfoglia per

@@ -187,6 +187,9 @@ const store = reactive({
     },
     isMovieFound: true,
     isTvFound: true,
+
+    isMovieSearchOn: true,
+    isTvSearchOn: true,
 });
 
 export { store };

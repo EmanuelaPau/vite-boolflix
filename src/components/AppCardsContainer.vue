@@ -8,21 +8,23 @@
         </ul>
     </div>
     <!-- Movies -->
-    <h1>Film</h1>
+    <h1 v-if="store.isMovieSearchOn == true">Film</h1>
     <NoResultsCard v-if="store.isMovieFound == false" />
     <div class="d-flex flex-wrap gap-2 mb-4 ">
         <!-- Movie  card-->
-        <MovieCard v-for="movie in    store.moviesList   " class="mt-3 movie-card" :movie=movie :title=movie.title
-            :originalTitle=movie.original_title :language=movie.original_language :rating=movie.vote_average />
+        <MovieCard v-if="store.isMovieSearchOn == true" v-for="movie in    store.moviesList   " class="mt-3 movie-card"
+            :movie=movie :title=movie.title :originalTitle=movie.original_title :language=movie.original_language
+            :rating=movie.vote_average />
     </div>
 
     <!-- Series -->
-    <h1>Serie Tv</h1>
+    <h1 v-if="store.isTvSearchOn == true">Serie Tv</h1>
     <NoResultsCard v-if="store.isTvFound == false" />
     <div class="d-flex flex-wrap gap-2">
         <!-- Series  card-->
-        <MovieCard class="mt-3 movie-card" v-for=" series in store.tvSeriesList" :movie=series :title=series.name
-            :originalTitle=series.original_name :language=series.original_language :rating=series.vote_average />
+        <MovieCard v-if="store.isTvSearchOn == true" class="mt-3 movie-card" v-for=" series in store.tvSeriesList"
+            :movie=series :title=series.name :originalTitle=series.original_name :language=series.original_language
+            :rating=series.vote_average />
     </div>
 </template>
 

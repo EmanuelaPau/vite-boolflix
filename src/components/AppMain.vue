@@ -23,11 +23,11 @@ export default {
         return {
             store,
             apiKey: 'f962c0c469c36980eda0b0c8310fb32d',
-            linkApiMovie: ' https://api.themoviedb.org/3/search/movie',
-            linkApiTv: ' https://api.themoviedb.org/3/search/tv',
+            linkApiMovie: 'https://api.themoviedb.org/3/search/movie',
+            linkApiTv: 'https://api.themoviedb.org/3/search/tv',
 
-            linkApiMovieDiscover: ' https://api.themoviedb.org/3/discover/movie',
-            linkApiTvDiscover: ' https://api.themoviedb.org/3/discover/tv',
+            linkApiMovieDiscover: 'https://api.themoviedb.org/3/discover/movie',
+            linkApiTvDiscover: 'https://api.themoviedb.org/3/discover/tv',
         }
     },
     methods: {
@@ -36,6 +36,7 @@ export default {
                 params: {
                     api_key: 'f962c0c469c36980eda0b0c8310fb32d',
                     query: element,
+                    language: 'it',
                 }
             }
             )
@@ -62,6 +63,7 @@ export default {
                 params: {
                     api_key: 'f962c0c469c36980eda0b0c8310fb32d',
                     query: element,
+                    language: 'it',
                 }
             }
             )
@@ -85,6 +87,58 @@ export default {
                 });
 
 
+        },
+
+        discoverMovie() {
+            axios.get(this.linkApiMovieDiscover, {
+                params: {
+                    api_key: 'f962c0c469c36980eda0b0c8310fb32d',
+                    page: '1',
+                    sort_by: 'popularity.desc',
+                    language: 'it',
+                    with_origin_country: store.languageToSearch
+                }
+            }
+            )
+                .then((response) => {
+                    // handle success
+                    store.moviesList = response.data.results;
+                    console.log(store.moviesList)
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+                .finally(function () {
+                    // always executed
+                });
+
+            axios.get(this.linkApiTvDiscover, {
+                params: {
+                    api_key: 'f962c0c469c36980eda0b0c8310fb32d',
+                    language: 'it',
+                    page: '1',
+                    sort_by: 'popularity.desc',
+                    with_origin_country: store.languageToSearch
+
+                }
+            }
+            )
+                .then((response) => {
+                    // handle success
+                    store.tvSeriesList = response.data.results;
+                    console.log('Series List arriving');
+                    console.log(store.moviesList)
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+                .finally(function () {
+                    // always executed
+                });
+
+
         }
     },
 
@@ -92,9 +146,10 @@ export default {
         axios.get(this.linkApiMovieDiscover, {
             params: {
                 api_key: 'f962c0c469c36980eda0b0c8310fb32d',
-                language: 'en-US',
                 page: '1',
                 sort_by: 'popularity.desc',
+                language: 'it',
+                with_origin_country: store.languageToSearch
             }
         }
         )
@@ -114,9 +169,11 @@ export default {
         axios.get(this.linkApiTvDiscover, {
             params: {
                 api_key: 'f962c0c469c36980eda0b0c8310fb32d',
-                language: 'en-US',
+                language: 'it',
                 page: '1',
                 sort_by: 'popularity.desc',
+                with_origin_country: store.languageToSearch
+
             }
         }
         )

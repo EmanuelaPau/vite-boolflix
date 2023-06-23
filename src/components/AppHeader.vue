@@ -18,19 +18,19 @@
             <div class="language-accordion" :class="isLanguageAccordionHover == false ? 'd-none' : ''"
                 @mouseleave="isLanguageAccordionHover = false">
                 <ul>
-                    <li>
+                    <li @click="store.languageToSearch = 'UK', discoverMovie()">
                         English
                     </li>
-                    <li>
+                    <li @click="store.languageToSearch = 'IT', discoverMovie()">
                         Italian
                     </li>
-                    <li>
+                    <li @click="store.languageToSearch = 'FR', discoverMovie()">
                         French
                     </li>
-                    <li>
+                    <li @click="store.languageToSearch = 'CH', discoverMovie()">
                         Chinese
                     </li>
-                    <li>
+                    <li @click="store.languageToSearch = 'JA', discoverMovie()">
                         Japanese
                     </li>
                 </ul>
@@ -139,9 +139,12 @@ ul.navlist {
     height: 100%;
 
     li {
+        cursor: pointer;
+
         a {
             text-decoration: none;
             color: white;
+            cursor: pointer;
         }
     }
 }

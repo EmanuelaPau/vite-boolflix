@@ -18,19 +18,19 @@
             <div class="language-accordion" :class="isLanguageAccordionHover == false ? 'd-none' : ''"
                 @mouseleave="isLanguageAccordionHover = false">
                 <ul>
-                    <li @click="store.languageToSearch = 'UK', discoverMovie()">
+                    <li @click="$emit('language', 'GB')">
                         English
                     </li>
-                    <li @click="store.languageToSearch = 'IT', discoverMovie()">
+                    <li @click="$emit('language', 'IT')">
                         Italian
                     </li>
-                    <li @click="store.languageToSearch = 'FR', discoverMovie()">
+                    <li @click="$emit('language', 'FR')">
                         French
                     </li>
-                    <li @click="store.languageToSearch = 'CH', discoverMovie()">
+                    <li @click="$emit('language', 'CN')">
                         Chinese
                     </li>
-                    <li @click="store.languageToSearch = 'JA', discoverMovie()">
+                    <li @click="$emit('language', 'JP')">
                         Japanese
                     </li>
                 </ul>

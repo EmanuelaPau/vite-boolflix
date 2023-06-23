@@ -190,7 +190,6 @@ const store = reactive({
 
     isMovieSearchOn: true,
     isTvSearchOn: true,
-    languageToSearch: `US`
 });
 
 export { store };

@@ -1,6 +1,6 @@
 <template>
     <main class="my_container px-2 px-sm-5 ">
-        <AppHeader @search="searchMovie" />
+        <AppHeader @search="searchMovie" @language="discoverMovie" />
         <AppCardsContainer />
     </main>
 </template>
@@ -89,14 +89,14 @@ export default {
 
         },
 
-        discoverMovie() {
+        discoverMovie(element) {
             axios.get(this.linkApiMovieDiscover, {
                 params: {
                     api_key: 'f962c0c469c36980eda0b0c8310fb32d',
                     page: '1',
                     sort_by: 'popularity.desc',
                     language: 'it',
-                    with_origin_country: store.languageToSearch
+                    with_origin_country: element,
                 }
             }
             )
@@ -119,7 +119,7 @@ export default {
                     language: 'it',
                     page: '1',
                     sort_by: 'popularity.desc',
-                    with_origin_country: store.languageToSearch
+                    with_origin_country: element,
 
                 }
             }

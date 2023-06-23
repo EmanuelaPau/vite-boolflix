@@ -59,19 +59,19 @@
                         class="account-accordion-menu pt-4" @mouseleave="isAccountAccordionHover = false">
                         <div class="w-100 d-flex align-items-center mb-3">
                             <img class="profile-pic me-2" src="../../public/profile_pic_2.png" alt="profile pic">
-                            <p class="m-0 accordion-item">Mamma</p>
+                            <p class="m-0 accordion-item " @click="$emit('search', 'romani')">Mamma</p>
                         </div>
                         <div class="w-100 d-flex align-items-center mb-3">
                             <img class="profile-pic me-2" src="../../public/profile_pic_3.png" alt="profile pic">
-                            <p class="m-0 accordion-item">Babbo</p>
+                            <p class="m-0 accordion-item" @click="$emit('search', 'western')">Babbo</p>
                         </div>
                         <div class="w-100 d-flex align-items-center mb-3">
                             <img class="profile-pic me-2" src="../../public/profile_pic_4.png" alt="profile pic">
-                            <p class="m-0 accordion-item">Sorella</p>
+                            <p class="m-0 accordion-item" @click="$emit('search', 'murder')">Sorella</p>
                         </div>
                         <div class="w-100 d-flex align-items-center mb-3">
                             <img class="profile-pic me-2" src="../../public/profile_pic_kids.png" alt="profile pic">
-                            <p class="m-0 accordion-item">Kids</p>
+                            <p class="m-0 accordion-item" @click="$emit('search', 'disney')">Kids</p>
                         </div>
 
                         <div class="w-100 d-flex align-items-center mb-3">

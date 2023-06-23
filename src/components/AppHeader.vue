@@ -1,16 +1,38 @@
 <template>
     <header class="d-flex justify-content-between align-items-center">
         <!-- header left  -->
-        <div class="header-left d-flex justify-content-between align-items-center">
+        <div class="header-left d-flex justify-content-between align-items-center position-relative">
             <a href="#"><img id="bool-logo" class="me-4" src="../../public/boolflix_logo.png" alt="boolflix logo"></a>
-            <ul class="navlist list-unstyled d-flex align-items-center m-0">
+            <ul class="navlist list-unstyled d-flex align-items-center m-0 ">
                 <li class="m-2 d-none d-md-block"><a href="">Home</a></li>
                 <li class="m-2 d-none d-md-block"><a href="">Serie TV</a></li>
                 <li class="m-2 d-none d-md-block"><a href="">Film</a></li>
                 <li class="m-2 d-none d-lg-block"><a href="">Nuovi e Popolari</a></li>
                 <li class="m-2 d-none d-xl-block"><a href="">La mia nuova lista</a></li>
-                <li class="m-2 d-none d-xxl-block"><a href="">Sfoglia per lingua</a></li>
+                <li @mouseover="isLanguageAccordionHover = true" class="m-2 d-none d-xxl-block"><a href="">Sfoglia per
+                        lingua</a></li>
             </ul>
+
+            <div class="language-accordion" :class="isLanguageAccordionHover == false ? 'd-none' : ''"
+                @mouseleave="isLanguageAccordionHover = false">
+                <ul>
+                    <li>
+                        English
+                    </li>
+                    <li>
+                        Italian
+                    </li>
+                    <li>
+                        French
+                    </li>
+                    <li>
+                        Chinese
+                    </li>
+                    <li>
+                        Japanese
+                    </li>
+                </ul>
+            </div>
         </div>
         <!-- header right -->
         <div class="header-right d-flex justify-content-between align-items-center">
@@ -88,9 +110,11 @@ export default {
             store,
             searchedText: '',
             isAccountAccordionHover: false,
+            isLanguageAccordionHover: false,
         }
     },
     methods() {
+
     },
 }		
 </script>
@@ -116,6 +140,31 @@ ul.navlist {
         a {
             text-decoration: none;
             color: white;
+        }
+    }
+}
+
+div.language-accordion {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.648);
+    border: 1px solid rgba(255, 255, 255, 0.297);
+    z-index: 1;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: .5rem 1rem;
+
+        li {
+            padding: .3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.297);
+            cursor: pointer;
+        }
+
+        li:hover {
+            text-decoration: underline;
         }
     }
 }

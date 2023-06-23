@@ -190,6 +190,27 @@ const store = reactive({
 
     isMovieSearchOn: true,
     isTvSearchOn: true,
+
+    profiles: [
+        {
+            name: 'mamma',
+            lastMovieSeen: ['cleopatra', 'titanic', 'prova a prendermi', 'i vichinghi', 'dario fo'],
+            lastTVSeen: ['Law and order', 'NCIS', 'LOL italia', 'Il caso Alex Schwazer', 'comedy'],
+            img: '../../public/profile_pic_2.png'
+        },
+        {
+            name: 'babbo',
+            lastMovieSeen: ['il grinta', 'point break', 'tatanka', 'inception', 'john wick'],
+            lastTVSeen: ['Unsolved mysteries', 'master chef', 'the flash', 'LOL italia', 'barnaby'],
+            img: '../../public/profile_pic_3.png'
+        },
+        {
+            name: 'sorella',
+            lastMovieSeen: ['akira', 'kill bill', 'avatar', 'chiara ferragni', 'blue velvet'],
+            lastTVSeen: ['luca ravenna', 'attack on titan', 'questo mondo non mi', 'mr robot', 'mad man'],
+            img: '../../public/profile_pic_4.png'
+        },
+    ]
 });
 
 export { store };
